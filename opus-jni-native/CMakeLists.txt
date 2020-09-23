@@ -5,9 +5,10 @@ cmake_policy(SET CMP0091 NEW)
 cmake_policy(SET CMP0048 NEW)
 
 #####################
-# Pre project setup #
+# Pre project setup m#
+# 注意：macOSbuild时需要加上这行，linux build时去掉
 #####################
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.10" CACHE STRING "Minimum OS X deployment version" FORCE)
+# set(CMAKE_OSX_DEPLOYMENT_TARGET "10.10" CACHE STRING "Minimum OS X deployment version" FORCE)
 
 #################
 # Project setup #
@@ -45,7 +46,8 @@ endif()
 # Project sources #
 ###################
 set(OPUS_JNI_NATIVE_SOURCES
-        src/opus_jni.c)
+        # src/opus_jni.c
+        src/com_ifengyu_tcpserver_jni_OpusUtils.cpp)
 
 ##############
 # Add target #
